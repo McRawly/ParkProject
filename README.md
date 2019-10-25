@@ -148,19 +148,20 @@ If Visual Studio Code is installed, then you might get that link. If Notepad++ i
 Your local clone of the repository, will get out of sync with this (upstream) repository from time to time. 
 
 A few `git` commands is all it takes to get your local clone up to date.
+Fetch will show you what's different from your local and the server repositories.
+Pull will copy from the server repository to your local copy, overwriting the existing files (you will lose all uncommitted changes).
+Using the desktop client my prompt you if you have uncommitted changes before executing the pull. 
 
 ```bash
 # WARNING: this will erase local pending changes!
 # commit them to a different branch or use git stash
-git checkout gh-pages
-git fetch upstream
-git reset --hard upstream/gh-pages
+git fetch
+git pull
 ```
 
-This is to make sure you have the latest files, but a 'reset' command will overwrite all files. So there is a "stash" function that allows you to 
+This is to make sure you have the latest files, but a 'pull' command will overwrite all files. So there is a "stash" function that allows you to store uncommitted changes. 
 
-Now that local is up to date with `upstream`, update your GitHub fork with:
-
+Using the GitHub Desktop, it should just be clicking the "Fetch" tab, then clicking "Pull" if it changes from "Fetch" to "Pull". 
 
 ## Making changes, committing and pushing
 
