@@ -1,4 +1,4 @@
-# ParkProject
+# Bearmuda Treeangle Website
 PCC CIS 193 Class Group Project Fall 2019
 
 # Git:
@@ -198,7 +198,7 @@ Make sure you're uploading to project repository
 Switch to class repository:
 
 ```bash
-git remote set-url origin  https://github.com/McRawly/ParkProject.git 
+git remote set-url origin https://github.com/McRawly/ParkProject.git 
 ```
 
 Find files ("add" all), commit with message, then push.
