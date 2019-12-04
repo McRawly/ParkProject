@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="eng">
 
 <head>
     <meta charset="UTF-8">
@@ -182,18 +182,14 @@
                     <div class="col-lg-3 col-sm-6"><p id="pathhazardsp">None.</p></div>
                 </div>
                 <!-- Table -->
-                <table id="conditions" style="width: 50%">
-                <tr>
-                   <th>Firstname</th>
-                   <th>Lastname</th>
-                   <th>Age</th>
-                 </tr>
+                <div class ="col-lg-6">
+                <table id="conditions-table" style="width: 100%">
                  <tr>
-                   <td>Jill</td>
-                   <td>Smith</td>
-                   <td>50</td>
+                   <td></td>
+                   <td></td>
                  </tr>
                 </table>
+                </div>
                 
             </div>
         </div>
@@ -214,7 +210,7 @@
                   <p>Click image to update.</p>
                </div>
                <div class="weather-img">
-                  <img src="https://weather.msfc.nasa.gov/goes/abi/thumb/GOES16_abi_conus_20191202_022116_band13.jpg">
+                  <img src="https://weather.msfc.nasa.gov/goes/abi/thumb/GOES16_abi_conus_20191204_233616_band13.jpg">
                   <!-- <img class="weatherimgB1" src="img/alerts/weather-overlay-tight.png"> -->
                   <!-- <style type="text/css">  -->
                   <!-- .weatherimgA1 { position:absolute; top: 0px; left: 0px; z-index: 1; }  -->
@@ -270,42 +266,80 @@
                 <div class="col-lg-6">
                     <div class="check-form">
                         <h2>Submit a Report</h2>
-                        <form action="#">
-                            <div class="room-selector">
+                        <form action="">
+                            <div class="datepicker">
                                 <div class="date-select">
                                     <p>Date Last Seen</p>
-                                    <input type="text" class="datepicker-1 hasDatepicker" value="mm / dd / yyyy"
-                                        id="dp1572044559268">
+                                    <input type="text" class="datepicker-1" value="mm / dd / yyyy"
+                                        id="dp1572044559268" placeholder="mm / dd / yyyy" required="required">
                                     <img src="img/calendar.png" alt="">
                                 </div>
                             </div>
                             <div class="room-selector">
-                                <p><br/>Full Name (missing person)</p>
+                                <br><p>Missing Person</p>
                                 <div class="input-group">
-                                    <input type="text" placeholder="Full Name Theirs">
+                                    <input type="text" placeholder="Their Full Name" required="required">
                                     <img src="img/edit.png" alt="">
                                 </div>
                             </div>
                             <div class="room-selector">
-                                <p>Full Name (reporter)</p>
-                                <div class="input-group">
-                                    <input type="text" placeholder="Full Name Yours">
-                                    <img src="img/edit.png" alt="">
-                                </div>
-                            </div>
-                            <div class="room-selector">
-                                <p>Sex</p>
+                                <br><p>Sex</p>
                                 <select class="suit-select">
                                     <option>Physical Appearance</option>
-                                    <option value="">Male</option>
-                                    <option value="">Female</option>
-                                    <option value="">Transexual (female to male)</option>
-                                    <option value="">Transexual (male to female)</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
                                 </select>
                             </div>
-                            <button type="button">Submit<i class="lnr lnr-arrow-right"></i></button>
+                            <div class="room-selector">
+                                <br><p>Description</p>
+                                <div class="input-group">
+                                    <input type="text" placeholder="ex: when/where last seen, alone w/others?" required="required">
+                                    <img src="img/edit.png" alt="">
+                                </div>
+                            </div>
+                            <div class="room-selector">
+                                <br><p>Reporter</p>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Your Full Name" required="required">
+                                    <img src="img/edit.png" alt="">
+                                </div>
+                            </div>
+                            <div class="room-selector">
+                                <br><p>Contact Info</p>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Your Phone #, email, or online handle" required="required">
+                                    <img src="img/edit.png" alt="">
+                                </div>
+                            </div>
+                            <div class="room-selector">
+                              <br><p></p>
+                              <div class="input-group">
+                                 <button type="submit">Submit<i class="lnr lnr-arrow-right"></i></button>
+                              </div>
+                            </div>
                         </form>
                     </div>
+                </div>
+                <div class="col-lg-12">
+                    <!-- Table -->
+                   <table id="missing-table" style="width: 100%">
+                   <tr>
+                      <th>Date Last Seen</th>
+                      <th>Missing Person</th>
+                      <th>Sex</th>
+                      <th>Description</th>
+                      <th>Reporter</th>
+                      <th>Contact Info</th>
+                    </tr>
+                    <tr>
+                      <td>Jill</td>
+                      <td>Smith</td>
+                      <td>50</td>
+                      <td>Jill</td>
+                      <td>Smith</td>
+                      <td>50</td>
+                    </tr>
+                   </table>
                 </div>
             </div>
         </div>

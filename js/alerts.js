@@ -44,13 +44,12 @@ function updateWeather() {
    // Update image source
    var imgElement=document.querySelectorAll(".weather-img img");
    imgElement[0].src=weatherImg;
-   console.log(weatherImg);
+   // // // console.log(weatherImg);
 }
 
 function createWeatherCallback() {
    var imgElement=document.querySelectorAll(".weather-img img");
-   console.log(imgElement.length);
-   imgElement=imgElement[-1]; // add callback to overlay, not underneath
+   imgElement=imgElement[0]; // add callback to overlay, not underneath
    if (imgElement.addEventListener) {
        imgElement.addEventListener("click", updateWeather, false);
    } else if (imgElement.attachEvent) {
@@ -59,7 +58,6 @@ function createWeatherCallback() {
    
    // Update Image every 5 minutes
    window.setInterval(updateWeather,5*60*1000); //update every 5 minutes
-   console.log('end of create Weather Callback');
 }
 
 /* imgElem0 = { src: "img/botany/pic1.jpg",
@@ -97,17 +95,18 @@ function updateStatus() {
     } else {
         parkstatusp.innerText="Closed.";
     }
-    console.log("inside updateStatus");
 }
 
 // ------------------------------------------
 //      MISSING PERSONS CAROUSEL
 // ------------------------------------------
+var missingObjDefault={fullname: "Nigheve Stoodent +dog", since: "Sep 3, 2019", sex: "Male", story:"Body disappeared: Body never found after mysterious weather condition.",reporter:"wikipedia", contact: ""};
 var missingObjects = [
-    {fullname: "Amelia Earhart +1", since: "July 24, 1897",sex: "Female", story:"Plane disappeared: Lockheed Model 10-E Electra. Along with co-pilot. "},
-    {fullname: "Thomas Arthur Garner +11", since: "July 10, 1945", sex: "Male", story:"Ship disappeared: US Navy PBM3S patrol seaplane, Bu. No.6545, Sqd VPB2-OTU#3"},
-    {fullname: "Nigheve Stoodent +dog", since: "Sep 3, 2019", sex: "Male", story:"Body disappeared: Body never found after mysterious weather condition."},
+    {fullname: "Amelia Earhart +1", since: "July 24, 1897",sex: "Female", story:"Plane disappeared: Lockheed Model 10-E Electra. Along with co-pilot. ",reporter:"wikipedia", contact: ""},
+    {fullname: "Thomas Arthur Garner +11", since: "July 10, 1945", sex: "Male", story:"Ship disappeared: US Navy PBM3S patrol seaplane, Bu. No.6545, Sqd VPB2-OTU#3",reporter:"wikipedia", contact: ""},
+    {fullname: "Nigheve Stoodent +dog", since: "Sep 3, 2019", sex: "Male", story:"Body disappeared: Body never found after mysterious weather condition.",reporter:"wikipedia", contact: ""},
 ];
+var missingPicDefault={name:"Nigheve",src:"img/alerts/missing-person.JPG"}
 var missingPics = [
     {name:"Amelia",src:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Amelia_Earhart_standing_under_nose_of_her_Lockheed_Model_10-E_Electra%2C_small.jpg/330px-Amelia_Earhart_standing_under_nose_of_her_Lockheed_Model_10-E_Electra%2C_small.jpg"},
     {name:"Thomas",src:"https://upload.wikimedia.org/wikipedia/commons/1/1a/Thomas_Arthur_Garner.jpg"},
@@ -141,7 +140,6 @@ function updateOwl () {
     missingList[0].innerText=missingObjects[owlNum].sex;
     missingList[1].innerText=missingObjects[owlNum].story;
     missingImg[0].src = missingPics[owlNum].src;
-    console.log("updates");
 }
 
 
@@ -150,33 +148,120 @@ function createOwlCallbacks() {
    var btns=document.getElementsByClassName("primary-btn");
     var owlPrev=btns[0];
     var owlNext=btns[1];//document.getElementById("missingBtnNext");
-    if (owlNext) {
-        console.log("exists");
-    } else {
-        console.log("dne");
-    }
     if (owlPrev.addEventListener) {
         owlPrev.addEventListener("click", prev_cb, false);
         owlNext.addEventListener("click", next_cb, false);
-        console.log("added el v1");
     } else if (owlPrev.attachEvent) {
         owlPrev.attachEvent("click", prev_cb);
         owlNext.attachEvent("click", next_cb);
-        console.log("added el v2");
     }
+}
+
+
+// ------------------------------------------
+//      MISSING TABLE
+// ------------------------------------------
+var missingTable = document.getElementById("missing-table");
+
+// var missingObjDefault={
+// fullname: "Nigheve Stoodent +dog", 
+// since: "Sep 3, 2019", 
+// sex: "Male", 
+// story:"Body disappeared: Body never found after mysterious weather condition.",
+// reporter:"wikipedia", 
+// contact: ""};
+
+function submitMissing(evt) {
+   // data validation first
+   var validity = validateForm();
+   if (validity) {}
+   else {
+      return;
+   }
+   
+   // add new data to end of an array (in correct places)
+   
+   // 1) copy data to new object
+   var newMissingObj = {}; // initialize new object as copy of a default object
+       newMissingObj.since = document.forms[0].elements[0].value;
+       newMissingObj.fullname = document.forms[0].elements[1].value;
+       newMissingObj.sex = document.forms[0].elements[2].value;
+       newMissingObj.story = document.forms[0].elements[3].value;
+       newMissingObj.reporter = document.forms[0].elements[4].value;
+       newMissingObj.contact = document.forms[0].elements[5].value; 
+   
+   // 2) add new object to end of array
+   missingObjects.push(newMissingObj);
+   
+   // update Table
+   updateTable();
+   
+   // clear form data
+   defaultForm();
+   
+   // // // console.log("end of submitMissing");
+}
+
+// clear inputs of form
+function validateForm() {
+   var validity=true;
+   return validity;
+}
+
+// clear inputs of form
+function defaultForm() {
+   // get form element objects (order matters)
+   var orderForm = document.getElementsByTagName("form")[0]; 
+   
+}
+
+// add submitMissing function as "submit" event listener
+function addSubmitFcn() {
+   
+   var orderForm = document.getElementsByTagName("form")[0]; // get 1st form object
+   if (orderForm.addEventListener) {
+      orderForm.addEventListener("submit", submitMissing, false);
+   } else if (orderForm.attachEvent) {
+      orderForm.attachEvent("onsubmit", submitMissing);
+   }
+   // // // console.log("added submit fcn");
+   
+   // clear form (reset with defaults)
+   defaultForm();
+}
+
+function updateTable() {
+   var headerRow="<tr><th>Date Last Seen</th> <th>Missing Person</th> <th>Sex</th> <th>Description</th> <th>Reporter</th> <th>Contact Info</th> </tr>";
+   var dataRow="\n<tr><td>{0}</td> <td>{1}</td> <td>{2}</td> <td>{3}</td> <td>{4}</td> <td>{5}</td> </tr>";
+   var newHtml=headerRow; 
+   
+   for (var i=0; i<missingObjects.length; i++) {
+      var newRow=dataRow; 
+      newRow=newRow.replace("{0}",missingObjects[i].since);
+      newRow=newRow.replace("{1}",missingObjects[i].fullname);
+      newRow=newRow.replace("{2}",missingObjects[i].sex);
+      newRow=newRow.replace("{3}",missingObjects[i].story);
+      newRow=newRow.replace("{4}",missingObjects[i].reporter);
+      newRow=newRow.replace("{5}",missingObjects[i].contact);
+      newHtml+=newRow;
+   }
+   document.getElementById("missing-table").innerHTML=newHtml;
+   
 }
 
 // ------------------------------------------
 //      ADD CALLBACKS
 // ------------------------------------------
 function setupPage() {
-    console.log("inside setupPage");
+    
     updateStatus();
     // createOwlObjects();
     createOwlCallbacks();
     updateOwl();
     updateWeather();
     createWeatherCallback();
+    updateTable();
+    addSubmitFcn();
 }
 
 // On Load
