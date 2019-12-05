@@ -1,3 +1,5 @@
+<!-- Author: Valerie Gutierrez -->
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -96,7 +98,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
-                    <h2>“Visitors may forget what happened but they will never forget how the park made them feel”.</h2>
+                    <h2>“Visitors may forget what happened but they will never forget how the park made them feel.”</h2>
                 </div>
             </div>
             <div class="about-para">
@@ -117,6 +119,9 @@
     <!-- Contact Section Begin -->
     <section class="contact-section spad">
         <div class="container">
+        	<div class="section-title">
+                <h1>Contact Us</h1>
+            </div>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="contact-left">
@@ -126,7 +131,7 @@
                                 <li><img src="img/placeholder-copy.png" alt=""> <span>Latitude: 28.619308<br>Longitude: -72.322084</span></li>
                                 <li><img src="img/phone-copy.png" alt=""> <span>+1 (626) 007 - 1947</span></li>
                                 <li><img src="img/envelop.png" alt=""> <span>contact@bearmudatreeangle.gov</span></li>
-                                <li><img src="img/clock-copy.png" alt=""> <span>Everyday: 03:00 - 13:13</span></li>
+                                <li><img src="img/clock-copy.png" alt=""> <span>Every day: 03:00 - 13:13</span></li>
                             </ul>
                         </div>
                         <div class="social-links">
@@ -148,27 +153,42 @@
                                 <div class="col-lg-12">
                                     <p>From</p>
                                     <div class="input-group">
-                                        <input type="text" placeholder="Full Name">
+                                        <input type="text" placeholder="Full Name" required="">
                                         <img src="img/edit.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="input-group">
-                                        <input type="email" placeholder="Email">
+                                        <input type="email" placeholder="Email" required="" id="emailbox">
                                         <img src="img/envelop-copy.png" alt="">
+                                        <p id="emailError" class="errorMsg"></p>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="input-group phone-num">
-                                        <input type="text" placeholder="Phone">
+                                        <input type="tel" placeholder="Phone" required="">
                                         <img src="img/phone-copy.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
+                                    <div class="select">
+                                    	<p>Subject</p>
+         								<select required="">
+            								<option value="General Questions">General Questions</option>
+            								<option value="Admissions">Admissions</option>
+            								<option value="Volunteer">Volunteer</option>
+            								<option value="Employment">Employment</option>
+            								<option value="Media Inquiry">Media Inquiry</option>
+            								<option value="Concerns">Concerns</option>
+            								<option value="Suggestions">Suggestions</option>
+         								</select>
+         							</div>
+         						</div>
+                                <div class="col-lg-12">
                                     <div class="message">
                                         <p>Message</p>
                                         <div class="textarea">
-                                            <textarea placeholder="Hi ..."></textarea>
+                                            <textarea placeholder="Hi ..." required=""></textarea>
                                             <img src="img/speech-copy.png" alt="">
                                         </div>
                                     </div>
@@ -199,7 +219,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Our Staff</h2>
+                        <h1>Our Staff</h1>
                     </div>
                 </div>
             </div>
@@ -211,7 +231,7 @@
                         </div>
                         <div class="staff-text">
                             <h5>Shawn Duenas</h5>
-                            <span>Park Alerts</span>
+                            <span>Park Ranger</span>
                             <a href="#"><i class="lnr lnr-arrow-right"></i></a>
                         </div>
                     </div>
@@ -223,7 +243,7 @@
                         </div>
                         <div class="staff-text">
                             <h5>Francis Mayen</h5>
-                            <span>Plants and Animals Blogger</span>
+                            <span>Botanical Scientist</span>
                             <a href="#"><i class="lnr lnr-arrow-right"></i></a>
                         </div>
                     </div>
@@ -235,7 +255,7 @@
                         </div>
                         <div class="staff-text">
                             <h5>Vincent Quach</h5>
-                            <span>Paranormal Multimedia</span>
+                            <span>Historian</span>
                             <a href="#"><i class="lnr lnr-arrow-right"></i></a>
                         </div>
                     </div>
@@ -247,7 +267,7 @@
                         </div>
                         <div class="staff-text">
                             <h5>Amanda Santana</h5>
-                            <span>Head of IT</span>
+                            <span>Head of Security</span>
                             <a href="#"><i class="lnr lnr-arrow-right"></i></a>
                         </div>
                     </div>
@@ -268,7 +288,7 @@
                 </div>
             </div>
             <div class="row pb-50">
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-3 col-sm-6">
                     <div class="single-footer-widget">
                         <h5>Location</h5>
                         <div class="widget-text">
@@ -277,7 +297,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-3 col-sm-6">
                     <div class="single-footer-widget">
                         <h5>Reception</h5>
                         <div class="widget-text">
@@ -286,26 +306,26 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-3 col-sm-6">
                     <div class="single-footer-widget">
                         <h5>Email</h5>
                         <div class="widget-text">
-                            <i class="lnr lnr-phone-handset"></i>
+                            <i class="lnr lnr-envelope"></i>
                             <p>contact@bearmudatreeangle.gov</p>
                         </div>
                     </div>
                 </div>
-                <!--
+                
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-footer-widget">
-                        <h5>Restaurant</h5>
+                        <h5>Hours of Operation</h5>
                         <div class="widget-text">
-                            <i class="lnr lnr-phone-handset"></i>
-                            <p>+1 (603)535-4592</p>
+                            <i class="lnr lnr-clock"></i>
+                            <p>Every day: 03:00 - 13:13</p>
                         </div>
                     </div>
                 </div>
-                -->
+                
             </div>
         </div>
     <!-- Footer Section End -->
@@ -319,5 +339,6 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
