@@ -31,233 +31,376 @@
 <!-- CUSTOM PAGE CSS-->
 
 <style>
-    h1 {
-        text-shadow: 1px 1px 0.1em grey;
-    }
+h1 {
+	text-shadow: 1px 1px 0.1em grey;
+}
 
-    h2 {
-        text-shadow: 1px 1px 0.1em grey;
-    }
+h2 {
+	text-shadow: 1px 1px 0.1em grey;
+}
 
-    h5 {
-        text-shadow: 1px 1px 0.1em black;
-    }
+h5 {
+	text-shadow: 1px 1px 0.1em black;
+}
 
-    p {
-        text-shadow: 1px 1px 0.1em black;
-    }
+p {
+	text-shadow: 1px 1px 0.1em black;
+}
 
-    fadein {
-        -webkit-animation: fadein 10s linear 1 normal forwards;
-    }
+fadein {
+	-webkit-animation: fadein 10s linear 1 normal forwards;
+}
 
-    @-webkit-keyframes fadein {
-        from {
-            opacity: 0;
-        }
+@-webkit-keyframes fadein {
+	from {
+		opacity: 0;
+	}
 
-        to {
-            opacity: .75;
-        }
-    }
+	to {
+		opacity: .75;
+	}
+}
 
-    .hero-section {
-        height: 100%;
-        padding-top: 207px;
-        width: 100%;
+.hero-section {
+	height: 100%;
+	padding-top: 207px;
+	width: 100%;
 
-        background-attachment: fixed;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
 
-    .overlay {
-        mix-blend-mode: overlay;
-    }
+.overlay {
+	mix-blend-mode: overlay;
+}
 
-    .screen {
-        mix-blend-mode: screen;
-    }
+.screen {
+	mix-blend-mode: screen;
+}
 
 
-    .object-wrapper {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: none;
-        justify-content: center;
-    }
+.object-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: none;
+	justify-content: center;
+}
 
-    < !--Hover and replace text-->div#switch span#a {
-        display: inline;
-    }
+< !--Hover and replace text-->div#switch span#a {
+	display: inline;
+}
 
-    div#switch:hover span#a {
-        display: none;
-    }
+div#switch:hover span#a {
+	display: none;
+}
 
-    div#switch span#b {
-        display: none;
-    }
+div#switch span#b {
+	display: none;
+}
 
-    div#switch:hover span#b {
-        display: inline;
-    }
+div#switch:hover span#b {
+	display: inline;
+}
+
+.row>.column {
+	padding: 0 8px;
+}
+
+< !--Modal/lightbox CSS-->.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.column {
+	float: left;
+	width: 25%;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: black;
+}
+
+.modal-content {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	width: 90%;
+	max-width: 1200px;
+}
+
+.close {
+	color: white;
+	position: absolute;
+	top: 15%;
+	right: 5%;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #999;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.mySlides {
+	display: none;
+}
+
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute;
+	top: 25%;
+	width: auto;
+	padding: 16px;
+	margin-top: -50px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.numbertext {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+}
+
+.caption-container {
+	text-align: center;
+	background-color: black;
+	padding: 2px 16px;
+	color: white;
+}
+
+img.demo {
+	opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+	opacity: 1;
+}
+
+img.hover-shadow {
+	transition: 0.3s;
+}
+
+.hover-shadow:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 </style>
 
-
-<!-- JAVASCRIPT-->
-
-<script>
-
-
-</script>
-
-
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Header Section Begin -->
-    <header class="header-section other-page">
-        <div class="container-fluid">
-            <div class="inner-header">
-                <div class="logo">
-                    <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                </div>
-                <div class="top-widget">
-                    <div class="top-info address">
-                        <img src="img/placeholder.png" alt="">
-                        <span>1525 Boring Lane, Los <br />Angeles, CA</span>
-                    </div>
-                    <div class="top-info phone-num">
-                        <img src="img/phone.png" alt="">
-                        <span>+1 (603)535-4592</span>
-                    </div>
-                </div>
-                <div class="container">
-                    <nav class="main-menu mobile-menu">
-                        <ul>
-                            <li><a href="./index.html">Home</a></li>
-                            <li><a href="./about-us.html">About</a></li>
-                            <li><a href="./rooms.html">Rooms</a></li>
-                            <li><a href="#">Facilities</a>
-                                <ul class="drop-menu">
-                                    <li><a href="#">Junior Suit</a></li>
-                                    <li><a href="#">Double Room</a></li>
-                                    <li><a href="#">Senior Suit</a></li>
-                                    <li><a href="#">Single Room</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./news.html">News</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+   <!-- Page Preloder -->
+   <div id="preloder">
+      <div class="loader"></div>
+   </div>
+   <!-- Header Section Begin -->
+   <header class="header-section other-page">
+      <div class="container-fluid">
+         <div class="inner-header">
+            <div class="logo">
+               <a href="./index.html"><img src="img/logo.png" alt=""></a>
+            </div>
+            <div class="top-widget">
+               <div class="top-info address">
+                  <img src="img/placeholder.png" alt="">
+                  <span>1525 Boring Lane, Los <br />Angeles, CA</span>
+               </div>
+               <div class="top-info phone-num">
+                  <img src="img/phone.png" alt="">
+                  <span>+1 (603)535-4592</span>
+               </div>
+            </div>
+            <div class="container">
+               <nav class="main-menu mobile-menu">
+                  <ul>
+                     <li><a href="./index.html">Home</a></li>
+                     <li><a href="./about-us.html">About</a></li>
+                     <li><a href="./rooms.html">Rooms</a></li>
+                     <li>
+                        <a href="#">Facilities</a>
+                        <ul class="drop-menu">
+                           <li><a href="#">Junior Suit</a></li>
+                           <li><a href="#">Double Room</a></li>
+                           <li><a href="#">Senior Suit</a></li>
+                           <li><a href="#">Single Room</a></li>
                         </ul>
-                    </nav>
-                </div>
-                <div id="mobile-menu-wrap"></div>
+                     </li>
+                     <li><a href="./news.html">News</a></li>
+                     <li><a href="./contact.html">Contact</a></li>
+                  </ul>
+               </nav>
             </div>
-        </div>
-    </header>
-    <!-- Header End -->
-
-    <!-- Hero Section Begin -->
-    <section class="hero-section set-bg" data-setbg="img/history/sunrise.jpg">
-        <div class="hero-text">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 style="position: absolute; top: 200px; letter-spacing: .1em; font-size: 7.5vw;">Bearmuda Treeangle Park</h1>
-                        <div class="overlay">
-                            <fadein><img src="img/history/triangleframe.png" style="position: absolute; left: -15%; top: -100%; z-index: -1;"></fadein>
-                        </div>
-                    </div>
-                </div>
-                <div class="page-nav">
-                    <a href="./services.html" class="left-nav"><i class="lnr lnr-arrow-left"></i> Services</a>
-                    <a href="./news.html" class="right-nav">News <i class="lnr lnr-arrow-right"></i></a>
-                </div>
+            <div id="mobile-menu-wrap"></div>
+         </div>
+      </div>
+   </header>
+   <!-- Header End -->
+   <!-- Hero Section Begin -->
+   <section class="hero-section set-bg" data-setbg="img/history/sunrise.jpg">
+      <div class="hero-text">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <h1 style="position: absolute; top: 200px; letter-spacing: .1em; font-size: 7.5vw;">Bearmuda Treeangle Park</h1>
+                  <div class="overlay">
+                     <fadein><img src="img/history/triangleframe.png" style="position: absolute; left: -15%; top: -100%; z-index: -1;"></fadein>
+                  </div>
+               </div>
             </div>
-        </div>
-    </section>
-    <!-- Hero Section End -->
-
-    <!-- Mist Imgs -->
-
-    <img src="img/history/mist.png" style="position: absolute; margin-top: -30%; opacity: 0.75;" width="100%">
-
-    <img src="img/history/mist2.png" style="position: absolute; margin-top: -30%;" width="100%;">
-
-
-
-    <!-- Rooms Section Begin -->
-    <section style="background-image: url(img/history/darkforest.png); background-position: 0% 5%; background-size: cover; width: 100%;">
-
-
-        <div id="switch">
-            <span id="a">
-                <h2 style="color:white; text-align: center; letter-spacing: .5em; padding-top: 35%;">A BREIF HISTORY</h2>
-            </span>
-
-            <span id="b">
-                <h2 style="color:#ff8080; text-align: center; letter-spacing: .5em; padding-top: 35%;">A GRIM HISTORY</h2>
-            </span>
-
-            <span id="a">
-                <img src="img/history/rock.png" style="position: absolute; padding-top: -25%; padding-left: 0%;" width="50%">
-            </span>
-
-            <span id="b">
-                <img src="img/history/rake.png" style="position: absolute; padding-top: -25%; padding-left: 25%;" width="75%">
-            </span>
-
-            <div class="container">
-
-
-                <h5 style="text-align: center; color: #f2f2f2; letter-spacing: .2em; line-height: 1.3; position: relative;"><br>
-                    <span id="a">At first glance, Bearmuda's supernatural wonders are easy to observe. Sights around the park are iconic to the human experience in the natural park. Beyond the rocks, plants, and animals, is a story where people in Bearmuda are smitten on that very same landscape. It tells a story of different cultures (sometimes working together, sometimes in violent clashes) creating the place we call Bearmuda Treeangle Park and defining how we experience it. Bearmuda's rich human history tells a story of conflict, dreams, diversity, hardships, adventures, and the preservation of one of the first national parks.<br><br><br><br><br><br><br><br><br><br><br><br></span>
-                </h5>
-
-                <h5 style="text-align: center; color: #f2f2f2; letter-spacing: .2em; line-height: 1.3; color: #ff8080; position: relative;">
-                    <span id="b">At first glance, Bearmuda's supernatural wonders are difficult to observe. Sights around the park are hazardous to the human experience in the unnatural park. Beyond the rakes, plants, and abominations, is a quarry where people in Bearmuda are taken when they try to escape. It tells a story of man's desires (sometimes working together, sometimes in violent clashes) creating the place we call Bearmuda Treeangle Park and defining how we live in fear of it. Bearmuda's rich human history tells a story of conflict, dread, adversity, hardships, misfortunes, and self-preservation of one of the only unnatural parks.<br><br><br><br><br><br><br><br><br></span>
-                </h5>
-
-
+            <div class="page-nav">
+               <a href="./services.html" class="left-nav"><i class="lnr lnr-arrow-left"></i> Services</a>
+               <a href="./news.html" class="right-nav">News <i class="lnr lnr-arrow-right"></i></a>
             </div>
-        </div>
-    </section>
-
-
-
-
-    <section style="background-image: url(img/history/aghouse.png); background-size: cover; width: 100%;">
-
-        <img src="img/history/couple.png" style="position: absolute; padding-top: 20%; padding-left: 25%; z-index: 1;" width="65%">	
-		
-        <div class="container">
-		
-			<div class="overlay" style="position: absolute;">
-				<fadein><img src="img/history/triangleframe.png" style="padding-right: 10%; top: 0%; z-index: -1;"></fadein>
-			</div>
-		
-            <h2 style="color:white; letter-spacing: 0.1em; font-size: 5vw; padding-top: 20%; padding-right: 50%; position: relative; z-index: 0;">H&P Bearenstein</h2>
-
-            <h5 style="text-align: center; color: #f2f2f2; letter-spacing: .05em; line-height: 1.3; position: relative; padding-top: 0%; padding-left: 50%; z-index: 2;">
-                Situated on the peak of Hell's Kitten outside the main port of the island stands a homely hotel operated by Han and Pan Bearenstein. Han was one of the earliest founder and settler of the island. For close to 20 years, the Bearensteins welcomed guests to their picture-perfect setting at La Guerida de Nieve—a fitting name meaning The Snow Den—at 5,360 feet. When describing the inn's elevated location, witty Pan Bearenstein would say, "Five thousand feet above the ground; just as near to heaven as you'll get." Many adventurers trekked to Bearmuda to view the park's glorious landscapes from Hell's Kitten. The Bearensteins provided a valuable service as one of many hotels along the outskirts of the island today. <br><br>
-
-				It's uncertain when the New England couple left California for Bermuda, but it's known that Han Bearenstein operated the Washaton Hotel in Groveland, California, in the 1860s. After the Act of Parliament in 1869 to set aside Bearmuda Treeangle to the United States as a grant, Han considered a business move. In 1870, he sought permission from the grant's board of commissioners to explore the new found island and to build a toll trail from the docks up to Hell's Kitten's peak. His savvy timing took advantage of increased exploration in the area after the completion of the transatlantic railroad; the park counted more than 1,200 explorers that one year. 
-				<br><br><br><br><br><br><br><br><br>
-            </h5>
-
-    </section>
-    </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <p>IamGreat</p>
-
+         </div>
+      </div>
+   </section>
+   <!-- Hero Section End -->
+   <!-- Mist Imgs -->
+   <img src="img/history/mist.png" style="position: absolute; margin-top: -30%; opacity: 0.75;" width="100%">
+   <img src="img/history/mist2.png" style="position: absolute; margin-top: -30%;" width="100%;">
+   <!-- Rooms Section Begin -->
+   <section style="background-image: url(img/history/darkforest.png); background-position: 0% 5%; background-size: cover; width: 100%;">
+      <span id="a">
+         <h2 style="color:white; text-align: center; letter-spacing: .5em; padding-top: 35%;">A BRIEF HISTORY</h2>
+      </span>
+      <!-- <span id="b">
+         <h2 style="color:#ff8080; text-align: center; letter-spacing: .5em; padding-top: 35%;">A GRIM HISTORY</h2>
+         </span> -->
+      <div id="switch">
+         <span id="a">
+         <img src="img/history/rock.png" style="position: absolute; padding-top: -25%; padding-left: 0%;" width="50%">
+         </span>
+         <span id="b">
+         <img src="img/history/rake.png" style="position: absolute; padding-top: -25%; padding-left: 25%;" width="75%">
+         </span>
+		 <h3 style="color: #525252; position: absolute; padding-top: 10%; padding-left: 10%;">help.</h3>
+      </div>
+      <div class="container">
+         <h5 style="text-align: center; color: #f2f2f2; letter-spacing: .2em; line-height: 1.3; position: relative;"><br>
+            <span id="a">At first glance, Bearmuda's supernatural wonders are easy to observe. Sights around the park are iconic to the human experience in the natural park. Beyond the rocks, plants, and animals, is a story where people in Bearmuda are smitten on that very same landscape. It tells a story of different cultures (sometimes working together, sometimes in violent clashes) creating the place we call Bearmuda Treeangle Park and defining how we experience it. Bearmuda's rich human history tells a story of conflict, dreams, diversity, hardships, adventures, and the preservation of one of the first national parks.<br><br><br><br><br><br><br><br><br><br><br><br></span>
+         </h5>
+         <!--  <h5 style="text-align: center; color: #f2f2f2; letter-spacing: .2em; line-height: 1.3; color: #ff8080; position: relative;">
+            <span id="b">At first glance, Bearmuda's supernatural wonders are difficult to observe. Sights around the park are hazardous to the human experience in the unnatural park. Beyond the rakes, plants, and abominations, is a quarry where people in Bearmuda are taken when they try to escape. It tells a story of man's desires (sometimes working together, sometimes in violent clashes) creating the place we call Bearmuda Treeangle Park and defining how we live in fear of it. Bearmuda's rich human history tells a story of conflict, dread, adversity, hardships, misfortunes, and self-preservation of one of the only unnatural parks.<br><br><br><br><br><br><br><br><br></span>
+            </h5> -->
+      </div>
+   </section>
+   <section style="background-image: url(img/history/aghouse.png); background-size: cover; width: 100%;">
+      <img src="img/history/couple.png" style="position: absolute; padding-top: 20%; padding-left: 25%; z-index: 1;" width="65%">	
+      <div class="container">
+         <div class="overlay" style="position: absolute;">
+            <fadein><img src="img/history/triangleframe.png" style="padding-right: 10%; top: 0%; z-index: -1;"></fadein>
+         </div>
+         <h2 style="color:white; letter-spacing: 0.1em; font-size: 5vw; padding-top: 20%; padding-right: 50%; position: relative; z-index: 0;">H&P Bearenstein</h2>
+         <h5 style="text-align: center; color: #f2f2f2; letter-spacing: .05em; line-height: 1.3; position: relative; padding-top: 0%; padding-left: 50%; z-index: 1;">
+            Situated on the peak of Hell's Kitten outside the main port of the island stands a homely hotel operated by Han and Pan Bearenstein. Han was one of the earliest founder and settler of the island. For close to 20 years, the Bearensteins welcomed guests to their picture-perfect setting at La Guerida de Nieve—a fitting name meaning The Snow Den—at 5,360 feet. When describing the inn's elevated location, witty Pan Bearenstein would say, "Five thousand feet above the ground; just as near to heaven as you'll get." Many adventurers trekked to Bearmuda to view the park's glorious landscapes from Hell's Kitten. The Bearensteins provided a valuable service as one of many hotels along the outskirts of the island today. <br><br>
+            It's uncertain when the New England couple left California for Bermuda, but it's known that Han Bearenstein operated the Washaton Hotel in Groveland, California, in the 1860s. After the Act of Parliament in 1869 to set aside Bearmuda Treeangle to the United States as a grant, Han considered a business move. In 1870, he sought permission from the grant's board of commissioners to explore the new found island and to build a toll trail from the docks up to Hell's Kitten's peak. His savvy timing took advantage of increased exploration in the area after the completion of the transatlantic railroad; the park counted more than 1,200 explorers that one year. 
+            <br><br><br><br><br><br><br><br><br>
+         </h5>
+      </div>
+   </section>
+   <section style="background-color: white; background-size: cover; width: 100%;">
+      <div class="container">
+         <h2 style="color:black; letter-spacing: 0.1em; font-size: 10vw; padding-top: 0%; padding-right: 50%; position: relative; z-index: 0; text-shadow: none;">
+            Places
+         </h2>
+         <p style="text-align: left; color: black; letter-spacing: .05em; line-height: 1.3; position: relative; padding-top: 0%; padding-right: 50%; z-index: 1; text-shadow: none;">
+            A “place” can be defined in a number of ways. It can be a spot on a map, a building, a structure, or anywhere that is filled with human meaning. History is written on the landscape through human structures and cultural landscapes. 
+         </p>
+         <br>
+         <div class="row">
+            <div class="column">
+               <img src="img/history/museum.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+            </div>
+            <div class="column">
+               <img src="img/history/advguild.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+            </div>
+            <div class="column">
+               <img src="img/history/cabin.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+            </div>
+            <div class="column">
+               <img src="img/history/lighthouse.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+            </div>
+         </div>
+         <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+               <div class="mySlides">
+                  <div class="numbertext">1 / 4</div>
+                  <img src="img/history/museum.jpg" style="width:100%">
+               </div>
+               <div class="mySlides">
+                  <div class="numbertext">2 / 4</div>
+                  <img src="img/history/advguild.jpg" style="width:100%">
+               </div>
+               <div class="mySlides">
+                  <div class="numbertext">3 / 4</div>
+                  <img src="img/history/cabin.jpg" style="width:100%">
+               </div>
+               <div class="mySlides">
+                  <div class="numbertext">4 / 4</div>
+                  <img src="img/history/lighthouse.jpg" style="width:100%">
+               </div>
+               <!-- Next/previous controls -->
+               <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+               <a class="next" onclick="plusSlides(1)">&#10095;</a>
+               <!-- Caption text -->
+               <div class="caption-container">
+                  <p id="caption"></p>
+               </div>
+               <!-- Thumbnail image controls -->
+               <div class="column">
+                  <img class="demo" src="img/history/museum.jpg" onclick="currentSlide(1)" alt="Bearmuda Museum">
+               </div>
+               <div class="column">
+                  <img class="demo" src="img/history/advguild.jpg" onclick="currentSlide(2)" alt="Adventurer's Guild">
+               </div>
+               <div class="column">
+                  <img class="demo" src="img/history/cabin.jpg" onclick="currentSlide(3)" alt="Floating Cabin">
+               </div>
+               <div class="column">
+                  <img class="demo" src="img/history/lighthouse.jpg" onclick="currentSlide(4)" alt="Bearmuda Lighthouse">
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <br><br><br>
 
     <!-- <div class="rooms-page-item">
                 <div class="row">
@@ -542,6 +685,53 @@
         </div>
     </footer>
     <!-- Footer Section End -->
+	
+	<!-- JAVASCRIPT-->
+
+	<script>
+
+	function openModal() {
+		document.getElementById("myModal").style.display = "block";
+	}
+
+	function closeModal() {
+		document.getElementById("myModal").style.display = "none";
+	}
+
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	function plusSlides(n) {
+		showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+		showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("demo");
+		var captionText = document.getElementById("caption");
+		if (n > slides.length) {
+			slideIndex = 1
+		}
+		if (n < 1) {
+			slideIndex = slides.length
+		}
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		}
+		slides[slideIndex - 1].style.display = "block";
+		dots[slideIndex - 1].className += " active";
+		captionText.innerHTML = dots[slideIndex - 1].alt;
+	}
+
+	</script>
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -552,4 +742,5 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+	<script src="js/history.js"></script>
 </body>
