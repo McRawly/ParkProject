@@ -11,7 +11,15 @@ var OPEN_HOURS = [
     [9, 12+ 5],
     [9, 12+ 5],
     [9, 12+ 5],
-    [9, 12+ 4]];
+    [9, 12+ 4]]; // normal hours
+ OPEN_HOURS = [
+    [3, 12+ 1],
+    [3, 12+ 1],
+    [3, 12+ 1],
+    [3, 12+ 1],
+    [3, 12+ 1],
+    [3, 12+ 1],
+    [3, 12+ 1]]; // bearmuda hours: 3am - 13:13pm
 var specialClose = false;
 
 
