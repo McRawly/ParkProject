@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="eng">
 
 <head>
     <meta charset="UTF-8">
@@ -25,7 +25,8 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <script src="js/jquery-3.3.1.min.js"></script> 
+    <link rel="stylesheet" href="css/alerts.css" type="text/css">
+    <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
@@ -34,8 +35,8 @@
         <div class="loader"></div>
     </div>
 
-   <!-- Header Section Begin -->
-     <header class="header-section other-page">
+    <!-- Header Section Begin -->
+    <header class="header-section other-page">
         <div class="container-fluid">
             <div class="inner-header">
                 <div class="logo">
@@ -55,13 +56,12 @@
                     <nav class="main-menu mobile-menu">
                         <ul>
                             <li><a href="./home.html" class="author-joseph">Home</a></li>
-                            <li><a href="./about.html"  class="author-valerie">About</a></li>
+                            <li><a href="./about.html" class="author-valerie">About</a></li>
                             <li><a href="#">Visit</a>
                                 <ul class="drop-menu">
                                     <li><a href="./visit.html" class="author-saul">Get Here</a></li>
                                     <li><a href="./animals.html" class="author-aaron">Animals</a></li>
                                     <li><a href="./botany.html" class="author-francis">Botany</a></li>
-                                    <li><a href="./sight-seeing.html" class="author-amanda">Sight-seeing</a></li>
                                     <li><a href="./history.html" class="author-vincent">History</a></li>
                                 </ul>
                             </li>
@@ -72,10 +72,10 @@
                 <div id="mobile-menu-wrap"></div>
             </div>
         </div>
-     </header>
+    </header>
     <!-- Header End -->
 
-   <!-- Header Include Test Code 
+    <!-- Header Include Test Code 
      <script> 
     $(function(){
       $("#includedContent").load("header.html"); 
@@ -85,7 +85,7 @@
      -->
 
     <!-- Hero Section Begin -->
-    <section class="hero-section set-bg" data-setbg="img/alerts/hazard-1182704_1280.jpg">
+    <section class="hero-section set-bg" data-setbg="img/alerts/tornado-plane-crash_blur5px_rS-50L-10_yL-10.jpg">
         <div class="hero-text">
             <div class="container">
                 <div class="row">
@@ -101,171 +101,250 @@
         </div>
     </section>
     <!-- Hero Section End -->
-    
 
-    <!-- Alerts Section Begin -->
-   
-    <section class="services-section">
-      <style>
-      .services-text a {color: white;}
-      </style>
+    <!-- Table Of Contents Section Begin -->
+    <section class="alerts-section table-of-contents2 set-bg" data-setbg="img/alerts/twirl_ps_v2_BROKEN.jpg" >
+        <style>
+            .alerts-toc a {
+                color: white;
+                /* offset-x | offset-y | blur-radius | color */
+                text-shadow: 1px 1px 3px black;
+            }
+            .alerts-toc h2 {
+                color: white;
+                /* offset-x | offset-y | blur-radius | color */
+                text-shadow: 1px 1px 3px black;
+            }
+            .table-of-contents2 {
+                background-color: #353535;
+                background-color: #000;
+                border-top: 1px solid #ae9548;
+                /* background-image: url(img/alerts/twirls_big.jpg); */
+            }
+        </style>
+        
+        <div class="container">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-services-item">
-                        <div class="services-pic-item">
-                            <img src="img/alerts/services-bg.jpg" alt="">
-                        </div>
-                        <div class="services-text">
-                            <h2><a href="#parkclosures">Park Conditions</a> <span id="parkstatusspan"></span></h2>
-                        </div>
+            <div class="column">
+                <div class="section-title">
+                    <!-- Table of Contents List -->
+                    <div class="alerts-toc"><h2>Portal to...</h2></div>
+                    <!-- Cool arrows: https://www.w3schools.com/charsets/ref_utf_arrows.asp ↬ &#8620;-->
+                    <div class="col-lg-12 alerts-toc"><h3><a href="#parkclosures">&#8620; Park Conditions</a> <span id="parkstatusspan"></span></h3></div>
+                    <div class="col-lg-12 alerts-toc"><h3><a href="#weather">&#8620; Weather</a></h3></div>
+                    <div class="col-lg-12 alerts-toc"><h3><a href="#missing ">&#8620;  Missing Persons</a></h3></div>
+                    <!-- end Table of Contents List -->
+                </div>
+            </div> 
+        </div>
+        </div>
+    </section>
+    <!-- Table of Contents Section End -->
+
+    <!-- Park Conditions Section -->
+    <section class="features-section spad">
+        <div class="container" id="parkclosures">
+            <div class="column">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Park Conditions</h2>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-services-item">
-                        <div class="services-pic-item">
-                            <img src="img/alerts/services-bg.jpg" alt="">
-                        </div>
-                        <div class="services-text">
-                            <h2><a href="#roadclosures">Road Conditions</a></h2>
-                        </div>
-                    </div>
+                <!-- Park Status -->
+                <div class="row">
+                    <div class="col-lg-3"><h4>Park Status</h4></div>
+                    <div class="col-lg-3"><p id="parkstatusp">None.</p></div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-services-item">
-                        <div class="services-pic-item">
-                            <img src="img/alerts/services-bg.jpg" alt="">
-                        </div>
-                        <div class="services-text">
-                            <h2><a href="#cautions">Cautions</a></h2>
-                        </div>
-                    </div>
+                <!-- Park Notifications -->
+                <div class="row">
+                    <div class="col-lg-3"><h4>Park Notifications</h4></div>
+                    <div class="col-lg-3"><p id="parknotificationsp">None.</p></div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-services-item">
-                        <div class="services-pic-item">
-                            <img src="img/alerts/services-bg.jpg" alt="">
-                        </div>
-                        <div class="services-text">
-                            <h2><a href="#weather">Weather</a></h2>
-                        </div>
-                    </div>
+                <!-- Road Closures -->
+                <div class="row" id="roadclosures">
+                    <div class="col-lg-3 col-sm-6"><h4>Road Closures</h4></div>
+                    <div class="col-lg-3 col-sm-6"><p id="roadclosuresp">None.</p></div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-services-item changed-align">
-                        <div class="services-pic-item">
-                            <img src="img/alerts/services-bg.jpg" alt="">
-                        </div>
-                        <div class="services-text">
-                            <h2><a href="#missing ">Missing Persons</a></h2>
-                        </div>
-                    </div>
+                <!-- Road Closures -->
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6"><h4>Road Hazards</h4></div>
+                    <div class="col-lg-3 col-sm-6"><p id="roadhazardsp">None.</p></div>
+                </div>
+                <!-- Road Closures -->
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6"><h4>Walking Path Closures</h4></div>
+                    <div class="col-lg-3 col-sm-6"><p id="pathclosuresp">None.</p></div>
+                </div>
+                <!-- Road Closures -->
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6"><h4>Walking Path Hazards</h4></div>
+                    <div class="col-lg-3 col-sm-6"><p id="pathhazardsp">None.</p></div>
+                </div>
+                <!-- Table -->
+                <div class ="col-lg-6">
+                <table id="conditions-table" style="width: 100%">
+                 <tr>
+                   <td></td>
+                   <td></td>
+                 </tr>
+                </table>
                 </div>
                 
             </div>
         </div>
     </section>
-    <!-- Services Section End -->
 
-    <!-- Services Section End -->
-    <section class="features-section spad">
-        <div class="container">
+    <!-- Weather Section -->
+    <section class="weather-section spad" >
+        <div class="container" id="weather">
+            <div class="column">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Weather</h2>
+                    </div>
+                </div>
+            
+               <div class="weather-update">
+                  <p>Photo is 5-10 minutes behind and refreshes every 5 minutes on the 1s and 6s. </p>
+                  <p>Click image to update.</p>
+               </div>
+               <div class="weather-img">
+                  <img src="https://weather.msfc.nasa.gov/goes/abi/thumb/GOES16_abi_conus_20191204_233616_band13.jpg">
+                  <!-- <img class="weatherimgB1" src="img/alerts/weather-overlay-tight.png"> -->
+                  <!-- <style type="text/css">  -->
+                  <!-- .weatherimgA1 { position:absolute; top: 0px; left: 0px; z-index: 1; }  -->
+                  <!-- .weatherimgB1 { position:relative; top: -215px; left: -385px; z-index: 3; }  -->
+                  <!-- </style> -->
+               </div>
+               <div class="weather-link">
+                  <a href="https://weather.msfc.nasa.gov/goes/abi/goesEastconusband13.html">Source: NASA GOES16 Satellite</a>
+               </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Missing Persons Section -->
+    <section class="facilities-section spad">
+        <div class="container" id="missing">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Features</h2>
+                        <h2>Missing Persons</h2>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-features-item">
-                        <i class="flaticon-043-room-service"></i>
-                        <h4>Room Service</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="col-lg-6">
+                    <div class="room-item">
+
+                        <div>
+                           <div class="primary-btn"><i class="lnr lnr-arrow-left" id="missingBtnBack"></i>Previous </div>
+                           <div class="primary-btn pull-right" ><i class="lnr lnr-arrow-right" id="missingBtnNext"></i>Next </div>
+                        </div>
+                        
+                         <div class="room-pic">
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Amelia_Earhart_standing_under_nose_of_her_Lockheed_Model_10-E_Electra%2C_small.jpg/330px-Amelia_Earhart_standing_under_nose_of_her_Lockheed_Model_10-E_Electra%2C_small.jpg"
+                             alt="" width="558" height="379">
+                         </div>
+                                        
+                        <div class="room-text">
+                            <div class="room-title">
+                                <h2 name="missing-name">Amelia Earhart</h2>
+                            </div>
+                            <div class="room-price">
+                                <span>Since</span>
+                                <h2 name="missing-date">July 24, 1897</h2>
+                            </div>
+                            <div class="room-price">
+                                <br>
+                                <p name="missing-list">Female</p>
+                                <p name="missing-list">Plane</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-features-item">
-                        <i class="flaticon-007-swimming-pool"></i>
-                        <h4>Pool</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="col-lg-6">
+                    <div class="check-form">
+                        <h2>Submit a Report</h2>
+                        <form action="">
+                            <div class="datepicker">
+                                <div class="date-select">
+                                    <p>Date Last Seen</p>
+                                    <input type="text" class="datepicker-1" value="mm / dd / yyyy"
+                                        id="dp1572044559268" placeholder="mm / dd / yyyy" required="required">
+                                    <img src="img/calendar.png" alt="">
+                                </div>
+                            </div>
+                            <div class="room-selector">
+                                <br><p>Missing Person</p>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Their Full Name" required="required">
+                                    <img src="img/edit.png" alt="">
+                                </div>
+                            </div>
+                            <div class="room-selector">
+                                <br><p>Sex</p>
+                                <select class="suit-select">
+                                    <option>Physical Appearance</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="room-selector">
+                                <br><p>Description</p>
+                                <div class="input-group">
+                                    <input type="text" placeholder="ex: when/where last seen, alone w/others?" required="required">
+                                    <img src="img/edit.png" alt="">
+                                </div>
+                            </div>
+                            <div class="room-selector">
+                                <br><p>Reporter</p>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Your Full Name" required="required">
+                                    <img src="img/edit.png" alt="">
+                                </div>
+                            </div>
+                            <div class="room-selector">
+                                <br><p>Contact Info</p>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Your Phone #, email, or online handle" required="required">
+                                    <img src="img/edit.png" alt="">
+                                </div>
+                            </div>
+                            <div class="room-selector">
+                              <br><p></p>
+                              <div class="input-group">
+                                 <button type="submit">Submit<i class="lnr lnr-arrow-right"></i></button>
+                              </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-features-item">
-                        <i class="flaticon-013-safety-box"></i>
-                        <h4>Safty Box</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-features-item">
-                        <i class="flaticon-033-dinner"></i>
-                        <h4>Restaurant</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-features-item">
-                        <i class="flaticon-029-wifi"></i>
-                        <h4>Wi-fi</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-features-item">
-                        <i class="flaticon-003-air-conditioner"></i>
-                        <h4>Air Conditioner</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-features-item">
-                        <i class="flaticon-033-dinner"></i>
-                        <h4>Restaurant</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-features-item">
-                        <i class="flaticon-020-telephone"></i>
-                        <h4>Phone</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-features-item">
-                        <i class="flaticon-019-television"></i>
-                        <h4>Smart TV</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-features-item">
-                        <i class="flaticon-040-key-card"></i>
-                        <h4>Smart Key</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-features-item">
-                        <i class="flaticon-009-cctv"></i>
-                        <h4>24/7 Security</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-features-item">
-                        <i class="flaticon-036-parking"></i>
-                        <h4>Free Parking</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
+                <div class="col-lg-12">
+                    <!-- Table -->
+                   <table id="missing-table" style="width: 100%">
+                   <tr>
+                      <th>Date Last Seen</th>
+                      <th>Missing Person</th>
+                      <th>Sex</th>
+                      <th>Description</th>
+                      <th>Reporter</th>
+                      <th>Contact Info</th>
+                    </tr>
+                    <tr>
+                      <td>Jill</td>
+                      <td>Smith</td>
+                      <td>50</td>
+                      <td>Jill</td>
+                      <td>Smith</td>
+                      <td>50</td>
+                    </tr>
+                   </table>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Services Section End -->
 
-        <!-- Footer Section Begin -->
+    <!-- Footer Section Begin -->
     <footer class="footer-section">
         <div class="container">
             <div class="row">
@@ -316,9 +395,14 @@
         </div>
         <div class="copyright-area">
             <div class="container">
-                <div class="copyright-text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+                <div class="copyright-text">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is
+                    made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                        target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </div>
                 <div class="privacy-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Photo Requests</a>
@@ -337,6 +421,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/alerts.js"></script>
 </body>
 
 </html>

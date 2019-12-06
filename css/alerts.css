@@ -1,0 +1,48 @@
+
+/*---------------------
+  Alerts Section
+-----------------------*/
+
+.alerts-section {
+	padding: 40px 15px 10px;
+}
+
+.single-alerts-item {
+	margin-bottom: 30px;
+}
+
+.single-alerts-item.changed-align 
+.alerts-text {
+	-webkit-transform: translateY(-72px);
+	transform: translateY(-72px);
+}
+
+.single-alerts-item 
+.alerts-pic-item {
+	position: relative;
+}
+
+.single-alerts-item 
+.alerts-pic-item img {
+	width: 100%;
+}
+
+.single-alerts-item 
+.alerts-text {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	padding: 0 40px;
+	-webkit-transform: translateY(-24px);
+	transform: translateY(-24px);
+}
+
+.single-alerts-item 
+.alerts-text h2 {
+	font-size: 48px;
+	color: #ffffff;
+	line-height: 48px;
+}
