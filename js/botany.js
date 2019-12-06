@@ -33,7 +33,7 @@ var dogbane ={
 		sci: "Apocynum cannabinum",
 		comm: "dogbane",
 		info: "Lethal dose of dogbane or milkweed is approximately 0.05% of body weight. Fresh leaves are the most toxic, but dried leaves also contain the toxic compounds. Death from poisoning usually occurs within 12-24 hours of ingestion.",
-		symp: "Symptoms: rad, weak  or otherwise abnormal pulse, depression, weakness, staggered gait, and lack of muscular control, pupil dilation, difficulty breathing, and colic, and/or blat. ",
+		symp: "rapid, weak, or otherwise abnormal pulse; depression, weakness, staggered gait, and lack of muscular control; dilation of pupils; difficulty breathing; and colic and/or bloat.",
 		cure: true,
 		imgs: ["dogbane01.jpg","dogbane02.jpg","dogbane03.jpg"]
 	};
@@ -55,27 +55,26 @@ var nightshade ={
 		cure: true,
 		imgs: ["nightshade01.jpg", "nightshade02.jpg", "nightshade03.jpg"]
 	};
-	/*
-var newPlant01 ={
-		sci: 
-		comm: 
-		info: 
-		symp: 
-		cure: 
-		imgs: 
+
+var arum ={
+		sci: "Arum Maculatum",
+		comm: "Wild Arum",
+		info: "All parts of this plant are considered toxic.",
+		symp: "Gastrointestinal discomfort, cardiovascular collapse, central nervous system depression, and rarely death.",
+		cure: true,
+		imgs: ["arum01.jpg","arum02.jpg","arum03.jpg"]
 	};
 	
-var newPlant02 ={
-		sci: 
-		comm: 
-		info: 
-		symp: 
-		cure:
-		imgs: 
+var larkspur ={
+		sci: " Delphinium Leucophaeum",
+		comm: "Larkspur",
+		info: "Most of the poisonings reported in the literature are related to cattle and other farm animals",
+		symp: "Nausea, vomiting, abdominal pain, muscular spasms. If fatal, death is usually due to respiratory collapse or cardiac arrest.",
+		cure: true,
+		imgs: ["larkspur01.jpg","larkspur02.jpg","larkspur03.jpg"]
 	};
-	*/
-	
-plantArray = [hemlock, dogbane,monkshood,nightshade];
+
+plantArray = [hemlock, dogbane,monkshood,nightshade, larkspur, arum];
 
 function nextPlant (evt){ // <<----------------------------------------------------------------------use of functions
 	plantCounter ++;
