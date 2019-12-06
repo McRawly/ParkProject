@@ -130,7 +130,7 @@ function validateForm(evt) {
 		document.getElementById("errorText").innerHTML = "Please fix the indicated problems and then resubmit your order.";
 		document.getElementById("errorText").style.display = "block";
 		document.getElementById("errorText").style.color = "red";
-		scroll(0,0);
+		// scroll(0,0);
 	}
 }
 
