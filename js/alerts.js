@@ -11,7 +11,15 @@ var OPEN_HOURS = [
     [9, 12+ 5],
     [9, 12+ 5],
     [9, 12+ 5],
-    [9, 12+ 4]];
+    [9, 12+ 4]]; // normal hours
+ OPEN_HOURS = [
+    [3, 12+ 1],
+    [3, 12+ 1],
+    [3, 12+ 1],
+    [3, 12+ 1],
+    [3, 12+ 1],
+    [3, 12+ 1],
+    [3, 12+ 1]]; // bearmuda hours: 3am - 13:13pm
 var specialClose = false;
 
 
@@ -19,13 +27,20 @@ var specialClose = false;
 //      WEATHER IMAGE
 // ------------------------------------------
 function updateWeather() {
-   var wDate = new Date();
+// updateWeather creates a new URL that points to the theoretically most recent NASA image file.
+// The NASA weather image has a format as follows:
+// "https://weather.msfc.nasa.gov/goes/abi/thumb/GOES16_abi_conus_20191204_233616_band13.jpg"
+// Assigns this new URL to the existing hardcoded value in the HTML. 
+
+   // initialize
+   var wDate = new Date(); // get current date time
+   
    // subtract 5 minutes before searching for valid image
    var durationInMinutes = 5;
    var MS_PER_MINUTE = 60000;
    var wDate = new Date ( wDate - durationInMinutes * MS_PER_MINUTE );
 
-   // Find nearest image (ends in 6 or 1)
+   // Find nearest image (ends in 6 or 1) and subtrcat the difference in minutes from now until then.
    var M1 = wDate.getUTCMinutes(); 
    var M2 = Math.floor ((M1-1)/5) * 5 + 1;
    durationInMinutes=M1-M2;
@@ -42,12 +57,14 @@ function updateWeather() {
    var weatherImg="https://weather.msfc.nasa.gov/goes/abi/thumb/GOES16_abi_conus_"+weatherString+"_band13.jpg";
    
    // Update image source
-   var imgElement=document.querySelectorAll(".weather-img img");
+   var imgElement=document.querySelectorAll(".weather-img img"); //class ="weather-img" filter all "img" tags
    imgElement[0].src=weatherImg;
-   // // // console.log(weatherImg);
+   
 }
 
 function createWeatherCallback() {
+// Adds event listener to the weather image "img" element 
+// so when you click it, it will call "updateWeather"
    var imgElement=document.querySelectorAll(".weather-img img");
    imgElement=imgElement[0]; // add callback to overlay, not underneath
    if (imgElement.addEventListener) {
@@ -59,18 +76,6 @@ function createWeatherCallback() {
    // Update Image every 5 minutes
    window.setInterval(updateWeather,5*60*1000); //update every 5 minutes
 }
-
-/* imgElem0 = { src: "img/botany/pic1.jpg",
-                  alt: "",
-                  id: "pic01"};
-imgElem1 = { src: "img/botany.jpg",
-                  alt: "",
-                  id: "pic02"};
-imgElem2 = { src: "img/botany.jpg",
-                  alt: "",
-                  id: "pic03"};
-                  
-pics = [imgElem0, imgElem1, imgElem2];  */
 
 
 // ------------------------------------------
@@ -84,13 +89,13 @@ var pathclosuresp=document.getElementById("pathclosuresp");
 var pathhazardsp=document.getElementById("pathhazardsp");
 
 function updateStatus() {
-    // Park Status
+ // Updates Park Status as "Open" or "Closed" based on time of day. 
+ // Uses OPEN_HOURS global variable constant to define open hours.
     var thisTime = new Date();
     var wk=thisTime.getDay(); // weekday 0=sun,4
     var hr=thisTime.getHours(); // 0=12am-12:59, 13=1pm-1:59
     if (hr >= OPEN_HOURS[wk][0] 
       & hr <  OPEN_HOURS[wk][1] & !specialClose) {
-        
         parkstatusp.innerText="Open.";
     } else {
         parkstatusp.innerText="Closed.";
@@ -100,6 +105,13 @@ function updateStatus() {
 // ------------------------------------------
 //      MISSING PERSONS CAROUSEL
 // ------------------------------------------
+/* 
+ * Declare two paralell arrays representing missing persons:
+ * 1) missingObjects = object with properties: 
+ *     fullname, since, sex, story, reporter, contact
+ * 2) missingPics = object with properties:
+ *     name, src
+ */
 var missingObjDefault={fullname: "Nigheve Stoodent +dog", since: "Sep 3, 2019", sex: "Male", story:"Body disappeared: Body never found after mysterious weather condition.",reporter:"wikipedia", contact: ""};
 var missingObjects = [
     {fullname: "Amelia Earhart +1", since: "July 24, 1897",sex: "Female", story:"Plane disappeared: Lockheed Model 10-E Electra. Along with co-pilot. ",reporter:"wikipedia", contact: ""},
@@ -112,14 +124,18 @@ var missingPics = [
     {name:"Thomas",src:"https://upload.wikimedia.org/wikipedia/commons/1/1a/Thomas_Arthur_Garner.jpg"},
     {name:"Nigheve",src:"img/alerts/missing-person.JPG"}
 ];
-var owlNum = 0;
+var owlNum = 0; // which missing person object to show
 
+// Grab object pointers of relevant HTML elements (all are arrays of objects)
 var missingName=document.getElementsByName("missing-name");
 var missingDate=document.getElementsByName("missing-date");
 var missingSex=document.getElementsByName("missing-sex");
 var missingList=document.getElementsByName("missing-list");
 var missingImg = document.querySelectorAll(".room-pic img");
 
+// Define callbacks for next and preivous buttons:
+// They each increment or decrement global variable owlNum,
+// then call "updateOwl" which updates HTML elements. 
 function prev_cb (evt) {
     owlNum--; //decrement counter
     if (owlNum < 0) {
@@ -143,7 +159,7 @@ function updateOwl () {
 }
 
 
-// Add Prev-Next Button Callbacks
+// Add Prev-Next Button Callbacks as click event listeners
 function createOwlCallbacks() {
    var btns=document.getElementsByClassName("primary-btn");
     var owlPrev=btns[0];
@@ -161,6 +177,9 @@ function createOwlCallbacks() {
 // ------------------------------------------
 //      MISSING TABLE
 // ------------------------------------------
+/* Table that lists each person in the missingObjects array. */
+
+// Get table HTML element object pointer
 var missingTable = document.getElementById("missing-table");
 
 // var missingObjDefault={
@@ -172,6 +191,12 @@ var missingTable = document.getElementById("missing-table");
 // contact: ""};
 
 function submitMissing(evt) {
+   // prevent form from submitting
+   if (evt.preventDefault) {
+		evt.preventDefault(); // prevent form from submitting
+	} else {
+		evt.returnValue = false; // prevent form from submitting in IE8
+	}
    // data validation first
    var validity = validateForm();
    if (validity) {}
@@ -199,7 +224,6 @@ function submitMissing(evt) {
    // clear form data
    defaultForm();
    
-   // // // console.log("end of submitMissing");
 }
 
 // clear inputs of form
@@ -211,18 +235,23 @@ function validateForm() {
 // clear inputs of form
 function defaultForm() {
    // get form element objects (order matters)
-   var orderForm = document.getElementsByTagName("form")[0]; 
-   
+   var submitForm = document.getElementsByTagName("form")[0]; 
+    submitForm.elements[0].value="";
+    submitForm.elements[1].value="";
+    submitForm.elements[2].value="";
+    submitForm.elements[3].value="";
+    submitForm.elements[4].value="";
+    submitForm.elements[5].value=""; 
 }
 
 // add submitMissing function as "submit" event listener
 function addSubmitFcn() {
    
-   var orderForm = document.getElementsByTagName("form")[0]; // get 1st form object
-   if (orderForm.addEventListener) {
-      orderForm.addEventListener("submit", submitMissing, false);
-   } else if (orderForm.attachEvent) {
-      orderForm.attachEvent("onsubmit", submitMissing);
+   var submitForm = document.getElementsByTagName("form")[0]; // get 1st form object
+   if (submitForm.addEventListener) {
+      submitForm.addEventListener("submit", submitMissing, false);
+   } else if (submitForm.attachEvent) {
+      submitForm.attachEvent("onsubmit", submitMissing);
    }
    // // // console.log("added submit fcn");
    
@@ -255,7 +284,6 @@ function updateTable() {
 function setupPage() {
     
     updateStatus();
-    // createOwlObjects();
     createOwlCallbacks();
     updateOwl();
     updateWeather();
@@ -273,5 +301,5 @@ if (window.addEventListener) {
 
 
 
-// End of alerts.js
-console.log("end of alerts.js");
+// // End of alerts.js
+// console.log("end of alerts.js");
