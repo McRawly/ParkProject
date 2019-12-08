@@ -1,20 +1,26 @@
-var timeOfDay = ["Good Morning", "Good Afternoon"]
+var timeOfDay = ["Good Morning", "Good Afternoon", "Good Evening", "Good Night"]
 
-document.getElementById('time').innerHTML = new Date().getHours() >= 12 ? timeOfDay[1] : timeOfDay[0];
+// document.getElementById('time').innerHTML = new Date().getHours() >= 12 ? timeOfDay[1] : timeOfDay[0];
+if (new Date().getHours() > 0 && new Date().getHours() < 12) {
+  document.getElementById('time').innerHTML = timeOfDay[0]
+} else if (new Date().getHours() >=12 && new Date().getHours() < 17) {
+  document.getElementById('time').innerHTML = timeOfDay[1]
+} else if (new Date().getHours() >=17 && new Date().getHours() <= 21) {
+  document.getElementById('time').innerHTML = timeOfDay[2]
+} else {
+  document.getElementById('time').innerHTML = timeOfDay[3]
+}
 
-function changeFontSize(target) {
-    var size = document.getElementById("hover");
-    var computedStyle = window.getComputedStyle
-        ? getComputedStyle(hover)
-        : demo.currentStyle;
-    var fontSize;
-    if (computedStyle) {
-        fontSize = parseFloat(computedStyle && computedStyle.fontSize);
-        if (target == document.getElementById("button1")) {
-            fontSize -= 5;
-          } else if (target == document.getElementById("button2")) {
-            fontSize += 5;
-          }
-          hover.style.fontSize = fontSize + "px";
-    }
+function increaseFontSize() {
+  var buttonPush = document.getElementById('hover');
+  style = window.getComputedStyle(buttonPush, null).getPropertyValue('font-size');
+  currentSize = parseFloat(style);
+  buttonPush.style.fontSize = (currentSize + 5) + 'px';
+}
+
+function decreaseFontSize() {
+  var buttonPush = document.getElementById('hover');
+  style = window.getComputedStyle(buttonPush, null).getPropertyValue('font-size');
+  currentSize = parseFloat(style);
+  buttonPush.style.fontSize = (currentSize - 5) + 'px';
 }
